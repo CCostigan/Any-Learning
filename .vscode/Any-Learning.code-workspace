@@ -1,0 +1,94 @@
+{
+	"folders": [
+		{ "name": "home",
+			"path": "."
+		},
+    { "name":"Java",
+      "path":"../Java/"
+    },
+    { "name":"Jupyter",
+      "path":"../Jupyter/"
+    },
+    { "name":"Python",
+      "path":"../Python/"
+    },
+    { "name":"SFB",
+      "path":"../SFB/"
+    },
+    { "name":"",
+      "path":"../target/"
+    }
+
+  ],
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+				{
+					"name": "Python: Current File",
+					"type": "debugpy",
+					"request": "launch",
+					"program": "${file}",
+					"console": "integratedTerminal"
+				},
+				{
+					"name": "Python: Debug Current File",
+					"type": "debugpy",
+					"request": "launch",
+					"program": "${file}",
+					"console": "integratedTerminal",
+					"justMyCode": false
+				},
+				{
+					"name": "Python: Current File (External Terminal)",
+					"type": "debugpy",
+					"request": "launch",
+					"program": "${file}",
+					"console": "externalTerminal"
+				},
+				{
+					"name": "Python: Debug Current File (External Terminal)",
+					"type": "debugpy",
+					"request": "launch",
+					"program": "${file}",
+					"console": "externalTerminal",
+					"justMyCode": false
+				},
+				{
+					"name": "Python: Module",
+					"type": "debugpy",
+					"request": "launch",
+					"module": "${fileBasenameNoExtension}",
+					"console": "integratedTerminal"
+				},
+				{
+					"name": "Python: Debug Module",
+					"type": "debugpy",
+					"request": "launch",
+					"module": "${fileBasenameNoExtension}",
+					"console": "integratedTerminal",
+					"justMyCode": false
+				},
+				{
+					"name": "Python: Module (External Terminal)",
+					"type": "debugpy",
+					"request": "launch",
+					"module": "${fileBasenameNoExtension}",
+					"console": "externalTerminal"
+				},
+				{
+					"name": "Python: Debug Module (External Terminal)",
+					"type": "debugpy",
+					"request": "launch",
+					"module": "${fileBasenameNoExtension}",
+					"console": "externalTerminal",
+					"justMyCode": false
+				},
+
+    ],
+    "compounds": []
+  },
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "automatic"
+  }
+  
+}
