@@ -54,12 +54,49 @@ damage_chart = [
     [ "AUXC", "EMBR", "SCAN", "PROB", "FHUL", "RWEN", "TRAN", "SHUT", "TRAC", "LABS", "AHUL", "LWEN", "EXD" ],
 ]
 
+# import pygame
+# pygame.init()
+# # Create a tiny window to capture keyboard focus
+# screen = pygame.display.set_mode((100, 100))
+
+# for event in pygame.event.get():
+#     if event.type == pygame.KEYDOWN:
+#         if event.key == pygame.K_SPACE:
+#             print("Spacebar pressed!")
+#     if event.type == pygame.KEYUP:
+#         if event.key == pygame.K_SPACE:
+#             print("Spacebar released!")
+# done=False
+# while not done:
+#   keys = pygame.key.get_pressed()
+#   if keys[pygame.K_LEFT]:
+#     done=True
+# pygame.quit()
 
 
-for i in proportional_movement_chart:
-    user_input = input('Please enter something: ')
-    print('You entered:', user_input)
-    print (f"{i}")
+import pygame
+
+pygame.init()
+# Create a tiny window to capture keyboard focus
+screen = pygame.display.set_mode((100, 100))
+
+print("Got here")
+running = True
+while running:
+
+  for i,ii in enumerate(proportional_movement_chart):
+    # print(f"impulse:{i} - {ii}")
+    movers=""
+    for j,k in enumerate(ii):
+      if k!=0:
+        movers+=f"S:{j}#{k} "
+    print(f"impulse:{i} - {movers}")
+
+
+pygame.quit()
+
+
+
 
 
 

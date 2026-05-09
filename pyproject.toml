@@ -1,0 +1,18 @@
+[project]
+name = "any-learning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "joblib>=1.5.3",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "pygame>=2.6.1",
+    "pyopengl>=3.1.10",
+    "pyopengl-accelerate>=3.1.10",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.1",
+    "six>=1.17.0",
+    "threadpoolctl>=3.6.0",
+]
