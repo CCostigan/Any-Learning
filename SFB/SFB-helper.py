@@ -54,24 +54,18 @@ damage_chart = [
     [ "AUXC", "EMBR", "SCAN", "PROB", "FHUL", "RWEN", "TRAN", "SHUT", "TRAC", "LABS", "AHUL", "LWEN", "EXD" ],
 ]
 
-# import pygame
-# pygame.init()
-# # Create a tiny window to capture keyboard focus
-# screen = pygame.display.set_mode((100, 100))
+global speeds
+speeds=[]
 
-# for event in pygame.event.get():
-#     if event.type == pygame.KEYDOWN:
-#         if event.key == pygame.K_SPACE:
-#             print("Spacebar pressed!")
-#     if event.type == pygame.KEYUP:
-#         if event.key == pygame.K_SPACE:
-#             print("Spacebar released!")
-# done=False
-# while not done:
-#   keys = pygame.key.get_pressed()
-#   if keys[pygame.K_LEFT]:
-#     done=True
-# pygame.quit()
+def get_speeds():
+  reading=False
+  speeds = []
+  print(f"Enter speeds for this turn")
+  while reading:
+    pass
+
+def fire_weapons():
+    print(f"FIRING WEAPONS")
 
 
 import pygame
@@ -92,6 +86,19 @@ while running:
         movers+=f"S:{j}#{k} "
     print(f"impulse:{i} - {movers}")
 
+    waiting = True
+    while waiting:
+      for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+          # print(f"Key pressed: {pygame.key.name(event.key)} {event.dict}")
+          if 'unicode' in event.dict.keys() and event.dict['unicode'] == ' ':
+            waiting=False
+          if 'unicode' in event.dict.keys() and event.dict['unicode'] == 'w':
+            fire_weapons()
+            waiting=False
+          if 'unicode' in event.dict.keys() and event.dict['unicode'] == 'q':
+            waiting=False
+            runnint=False
 
 pygame.quit()
 
