@@ -98,84 +98,57 @@ def fire_weapons():
     print(f"FIRING WEAPONS")
 
 
-import pygame
-
-pygame.init()
-# Create a tiny window to capture keyboard focus
-screen = pygame.display.set_mode((100, 100))
-
-print("Got here")
-running = True
-while running:
-
-  for i,ii in enumerate(proportional_movement_chart):
-    # print(f"impulse:{i} - {ii}")
-    movers=""
-    for j,k in enumerate(ii):
-      if k!=0:
-        movers+=f"S:{j}#{k} "
-    print(f"impulse:{i} - {movers}")
-
-    waiting = True
-    while waiting:
-      for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-          # print(f"Key pressed: {pygame.key.name(event.key)} {event.dict}")
-          if 'unicode' in event.dict.keys() and event.dict['unicode'] == ' ':
-            waiting=False
-          if 'unicode' in event.dict.keys() and event.dict['unicode'] == 'w':
-            fire_weapons()
-            waiting=False
-          if 'unicode' in event.dict.keys() and event.dict['unicode'] == 'q':
-            waiting=False
-            runnint=False
-
-pygame.quit()
 
 
 
+# import pygame
 
+# pygame.init()
+# # Create a tiny window to capture keyboard focus
+# screen = pygame.display.set_mode((100, 100))
 
+# print("Got here")
+# running = True
+# while running:
 
+#   for i,ii in enumerate(proportional_movement_chart):
+#     # print(f"impulse:{i} - {ii}")
+#     movers=""
+#     for j,k in enumerate(ii):
+#       if k!=0:
+#         movers+=f"S:{j}#{k} "
+#     print(f"impulse:{i} - {movers}")
 
+#     waiting = True
+#     while waiting:
+#       for event in pygame.event.get():
+#         if event.type == pygame.KEYDOWN:
+#           # print(f"Key pressed: {pygame.key.name(event.key)} {event.dict}")
+#           if 'unicode' in event.dict.keys() and event.dict['unicode'] == ' ':
+#             waiting=False
+#           if 'unicode' in event.dict.keys() and event.dict['unicode'] == 'w':
+#             fire_weapons()
+#             waiting=False
+#           if 'unicode' in event.dict.keys() and event.dict['unicode'] == 'q':
+#             waiting=False
+#             runnint=False
 
+# pygame.quit()
 
+from pynput import keyboard
 
+def on_press(key):
+    try:
+        print(f'Alphanumeric key pressed: {key.char}')
+    except AttributeError:
+        print(f'Special key pressed: {key}')
 
+def on_release(key):
+    print(f'Key released: {key}')
+    if key == keyboard.Key.esc:
+        # Stop listener
+        return False
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Collect events until released
+with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+    listener.join()
