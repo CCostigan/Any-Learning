@@ -1,7 +1,16 @@
 # Console app to help with mundane part of SFB
 # Impulse chart, weapon tables, damage allocation
 
+# https://www.starfleetgames.com/masterindex.shtml
+# https://www.starfleetgames.com/SFB_Cadet_Rulebook.pdf
+# https://www.starfleetgames.com/documents/FC_Reference_Card.pdf
+# https://www.starfleetgames.com/sfb/sfin/EAF.pdf
+# https://www.starfleetgames.com/sfb/sfin/HexMap4230.pdf
 
+# https://www.starfleetgames.com/CadetTraining.shtml
+# https://www.starfleetgames.com/documents/Cadet/Cadet%204/Federation%20CA%20cadet%20training%20v1.GIF
+
+# https://www.starfleetgames.com/sfb/sfin/32_Impulse_Chart%20-%20COLOR.pdf
 
 proportional_movement_chart = [
     #  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 ],
@@ -39,6 +48,27 @@ proportional_movement_chart = [
     [  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 ],
 ]
 
+proportional_movement_chart_16 = [  # WIP
+  [  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0  ],
+  [  2,  1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0  ],
+  [  3,  2,  2,  2,  2,  2,  0,  0,  0,  1,  1,  0,  0,  0,  0,  0  ],
+  [  4,  3,  3,  3,  3,  3,  0,  2,  2,  2,  0,  0,  1,  1,  0,  0  ],
+  [  5,  4,  4,  4,  0,  3,  3,  0,  0,  2,  0,  0,  0,  0,  0,  0  ],
+  [  6,  5,  5,  0,  4,  4,  0,  3,  3,  0,  2,  0,  0,  1,  0,  0  ],
+  [  7,  6,  6,  5,  5,  0,  4,  0,  0,  3,  0,  2,  0,  0,  0,  0  ],
+  [  8,  7,  7,  6,  6,  5,  5,  4,  4,  0,  3,  0,  2,  0,  1,  0  ],
+  [  9,  8,  0,  7,  0,  6,  0,  5,  0,  0,  0,  0,  0,  0,  0,  0  ],
+  [ 10,  9,  8,  7,  0,  6,  0,  5,  4,  0,  3,  0,  0,  0,  0,  0  ],
+  [ 11, 10,  9,  0,  8,  7,  0,  6,  0,  0,  4,  0,  0,  2,  0,  0  ],
+  [ 12, 11, 10,  9,  8,  7,  0,  6,  5,  0,  0,  3,  0,  0,  0,  0  ],
+  [ 13, 12, 11, 10,  0,  0,  8,  7,  0,  0,  0,  4,  0,  0,  0,  0  ],
+  [ 14, 13, 12, 11, 10,  9,  0,  0,  7,  6,  5,  0,  0,  0,  0,  0  ],
+  [ 15, 14, 13, 12, 11, 10,  9,  8,  0,  0,  0,  0,  0,  0,  0,  0  ],
+  [ 16, 15, 14, 13, 12, 11, 10,  9,  8,  7,  6,  5,  4,  3,  2,  1  ],
+]
+
+
+#  https://www.starfleetgames.com/sfb/sfin/DAC.pdf
 damage_chart = [
     [ "A","B","C","D","E","F","G","H","I","J","K","L","M" ],
     [ "BRDG", "FLAG", "SENS", "DCON", "AHUL", "LWEN", "TRAN", "TRAC", "SHUT", "LABS", "FHUL", "RWEN", "EXD" ],
